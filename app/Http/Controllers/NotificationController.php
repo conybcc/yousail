@@ -12,6 +12,7 @@ class NotificationController extends Controller
     {
         $user = Auth::user();
         $notifications = Notification::where('user_id', $user->id)
+            ->orderBy('created_at', 'DESC')
             ->paginate(2);
 
         $data = ['notifications' => $notifications];
