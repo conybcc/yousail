@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Article;
 use App\Comment;
 use Auth;
+use App\Events\CommentCreated;
 
 class CommentController extends Controller
 {
@@ -28,6 +29,7 @@ class CommentController extends Controller
         $comment->content = $request->input('content');
         $comment->save();
 
+        event(new CommentCreated($comment));
         return redirect()->route('article.detail', ['id' => $article->id]);
     }
 }
