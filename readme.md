@@ -44,6 +44,9 @@ ln -s ../storage/app/public/ storage
 # 默认图片
 cp default_avatar.png storage/app/public/
 
+# 执行创建表操作
+php artisan migrate
+
 # 填充分类数据
 php artisan db:seed --class=CategorySeeder
 
