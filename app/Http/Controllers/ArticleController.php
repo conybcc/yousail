@@ -100,7 +100,7 @@ class ArticleController extends Controller
 
         $category = Category::find($article->category_id);
         $data['category'] = $category->name;
-        $data['comments'] = Comment::paginate(2);
+        $data['comments'] = Comment::where('article_id', $id)->paginate(2);
 
         return view('article/detail', $data);
     }
