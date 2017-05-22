@@ -7,6 +7,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Dashboard</div>
                 <a href="{{ route('article.save.show') }}" >发表文章</a>
+                @include('article.list')
             </div>
         </div>
     </div>
