@@ -29,4 +29,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/article/delete/{id}', 'ArticleController@delete')->name('article.delete');
 
     Route::post('/comment/create', 'CommentController@create')->name('comment.create');
+
+    Route::get('/notification/list', 'NotificationController@listShow');
 });
