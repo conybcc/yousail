@@ -34,3 +34,12 @@ server {
     }
 }
 ```
+
+# 创建软链
+```
+cd public
+ln -s ../storage/app/public/ storage
+```
+
+# 默认图片
+cp default_avatar.png storage/app/public/

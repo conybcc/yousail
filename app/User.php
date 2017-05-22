@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use File;
 
 class User extends Authenticatable
 {
@@ -26,4 +27,20 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    /**
+     * avatar
+     * 用户头像地址
+     * @return
+     */
+    public function avatar()
+    {
+        $path = 'storage/' . $this->id . '.png';
+
+        if (!File::exists(public_path($path))) {
+            return '/storage/default_avatar.png';
+        }
+
+        return '/' . $path;
+    }
 }
