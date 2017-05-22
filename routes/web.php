@@ -27,4 +27,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/article/save/{id?}', 'ArticleController@saveSubmit');
     Route::get('/article/detail/{id}', 'ArticleController@detail')->name('article.detail');
     Route::get('/article/delete/{id}', 'ArticleController@delete')->name('article.delete');
+
+    Route::post('/comment/create', 'CommentController@create')->name('comment.create');
 });

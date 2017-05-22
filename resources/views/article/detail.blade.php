@@ -13,5 +13,7 @@
             <a href="{{ route('article.save.show', ['id' => $article->id]) }}">编辑</a>
             <a href="{{ route('article.delete', ['id' => $article->id]) }}">删除</a>
         @endif
+
+        @include('comment.create')
     </div>
 @endsection
