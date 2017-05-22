@@ -43,3 +43,7 @@ ln -s ../storage/app/public/ storage
 
 # 默认图片
 cp default_avatar.png storage/app/public/
+
+# 填充分类数据
+php artisan db:seed --class=CategorySeeder
+
