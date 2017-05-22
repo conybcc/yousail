@@ -15,5 +15,6 @@
         @endif
 
         @include('comment.create')
+        @include('comment.list')
     </div>
 @endsection
